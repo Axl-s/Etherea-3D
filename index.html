@@ -9,6 +9,31 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .gallery-img {
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -16,7 +41,10 @@
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-indigo-600">Etherea 3D</h1>
+      <div class="flex items-center space-x-2">
+        <img src="file:///C:/Users/Axel/Downloads/1744777715885.png" alt="Logo Etherea 3D" class="w-12 h-12 object-contain">
+        <h1 class="text-2xl font-bold text-indigo-600">Etherea 3D</h1>
+      </div>
       <nav class="space-x-6 hidden md:block">
         <a href="#catalogo" class="text-gray-600 hover:text-indigo-600">Catálogo</a>
         <a href="#contacto" class="text-gray-600 hover:text-indigo-600">Contacto</a>
@@ -38,27 +66,150 @@
       <h3 class="text-3xl font-bold text-center text-indigo-600 mb-10">Nuestro Catálogo</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Producto ejemplo -->
+        <!-- Producto ejemplo con galería -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden">
-          <img src="https://via.placeholder.com/600x400" alt="Mapa de Guatemala" class="w-full h-60 object-cover">
+          <div class="grid grid-cols-2 gap-1">
+            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+          </div>
           <div class="p-4">
             <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
             <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
             <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
             <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
-              <option value="Q150">30x20 cm - Q150</option>
-              <option value="Q250">50x35 cm - Q250</option>
-              <option value="Q400">80x60 cm - Q400</option>
+              <option value="Q2000">30x20 cm</option>
+              <option value="Q800">50x35 cm</option>
             </select>
-            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q150</span></p>
+            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
+            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
           </div>
         </div>
 
-        <!-- Agrega más productos aquí duplicando el bloque -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="grid grid-cols-2 gap-1">
+            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+          </div>
+          <div class="p-4">
+            <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
+            <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
+            <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
+            <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
+              <option value="Q2000">30x20 cm</option>
+              <option value="Q800">50x35 cm</option>
+            </select>
+            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
+            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="grid grid-cols-2 gap-1">
+            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+          </div>
+          <div class="p-4">
+            <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
+            <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
+            <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
+            <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
+              <option value="Q2000">30x20 cm</option>
+              <option value="Q800">50x35 cm</option>
+            </select>
+            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
+            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="grid grid-cols-2 gap-1">
+            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+          </div>
+          <div class="p-4">
+            <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
+            <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
+            <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
+            <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
+              <option value="Q2000">30x20 cm</option>
+              <option value="Q800">50x35 cm</option>
+            </select>
+            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
+            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- producto 2-->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="grid grid-cols-2 gap-1">
+            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+          </div>
+          <div class="p-4">
+            <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
+            <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
+            <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
+            <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
+              <option value="Q2000">30x20 cm</option>
+              <option value="Q800">50x35 cm</option>
+            </select>
+            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
+            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
+          </div>
+        </div>
+
+        
+
+        <!-- producto 3-->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="grid grid-cols-2 gap-1">
+            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+          </div>
+          <div class="p-4">
+            <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
+            <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
+            <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
+            <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
+              <option value="Q2000">30x20 cm</option>
+              <option value="Q800">50x35 cm</option>
+            </select>
+            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
+            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
+          </div>
+        </div>
+        <!-- Puedes duplicar el div anterior para agregar más productos con diferentes IDs y datos -->
+
+        <!-- producto 4-->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="grid grid-cols-2 gap-1">
+            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+          </div>
+          <div class="p-4">
+            <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
+            <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
+            <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
+            <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
+              <option value="Q2000">30x20 cm</option>
+              <option value="Q800">50x35 cm</option>
+            </select>
+            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
+            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
+
+  
+
+  
+  <!-- Lightbox Viewer -->
+  <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Imagen ampliada">
+  </div>
 
   <!-- Sobre Nosotros -->
   <section id="nosotros" class="bg-white py-12 px-6">
@@ -82,12 +233,12 @@
         <a href="https://www.instagram.com/tuCuenta" target="_blank" aria-label="Instagram" class="hover:text-pink-600">
           <i class="ph ph-instagram-logo"></i>
         </a>
-        <a href="https://wa.me/50212345678" target="_blank" aria-label="WhatsApp" class="hover:text-green-500">
+        <a href="https://wa.me/50244726096" target="_blank" aria-label="WhatsApp" class="hover:text-green-500">
           <i class="ph ph-whatsapp-logo"></i>
         </a>
       </div>
       <div class="mt-6">
-        <a href="https://wa.me/50212345678" target="_blank" class="inline-block bg-green-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-green-600 transition">
+        <a href="https://wa.me/50244726096" target="_blank" class="inline-block bg-green-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-green-600 transition">
           Enviar mensaje por WhatsApp
         </a>
       </div>
@@ -99,10 +250,23 @@
     © 2025 Etherea 3D. Todos los derechos reservados.
   </footer>
 
-  <!-- Script para actualizar precio -->
+  <!-- Scripts -->
   <script>
     function updatePrice(select, priceId) {
       document.getElementById(priceId).textContent = select.value;
+      const producto = 'Mapa de Guatemala';
+      const mensaje = `Hola, quiero ordenar el ${producto} en tamaño ${select.options[select.selectedIndex].text.split(' - ')[0]} por ${select.value}`;
+      const boton = select.parentElement.querySelector('a[href^="https://wa.me"]');
+      if (boton) {
+        boton.href = `https://wa.me/50244726096?text=${encodeURIComponent(mensaje)}`;
+      }
+    }
+
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
     }
   </script>
 
