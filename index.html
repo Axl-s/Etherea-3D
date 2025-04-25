@@ -53,7 +53,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+
   <section class="bg-indigo-600 text-white text-center py-16">
     <h2 class="text-4xl font-bold mb-4">Arte con alma, para cada rincón de tu vida</h2>
     <p class="text-lg mb-6">Diseños únicos impresos en 3D que elevan tus espacios</p>
@@ -66,7 +66,7 @@
       <h3 class="text-3xl font-bold text-center text-indigo-600 mb-10">Nuestro Catálogo</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Producto ejemplo con galería -->
+        <!-- Productos -->
         <!-- Mapa mundi -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden">
           <div class="grid grid-cols-2 gap-1">
@@ -123,40 +123,23 @@
           </div>
         </div>
 
+        <!--Tikal-->
         <div class="bg-white rounded-xl shadow-md overflow-hidden">
           <div class="grid grid-cols-2 gap-1">
-            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
-            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="img/tikal.webp" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
+            <img src="img/tikal3.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
           </div>
           <div class="p-4">
-            <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
+            <h4 class="text-xl font-semibold mb-2">Templo de tikal</h4>
             <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
             <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
             <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
-              <option value="Q2000">30x20 cm</option>
-              <option value="Q800">50x35 cm</option>
+              <option value="Q80">10x15 cm</option>
+              <option value="Q100">20x25 cm</option>
+              <option value="Q120">25x30 cm</option>
             </select>
-            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
-            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
-          </div>
-        </div>
-
-        <!-- producto 2-->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-          <div class="grid grid-cols-2 gap-1">
-            <img src="file:///C:/Users/Axel/Desktop/pagina/mapa1.jpg" alt="Mapa Guatemala 1" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
-            <img src="file:///C:/Users/Axel/Desktop/Fotos%20mapa%202m/img_6235.webp" alt="Mapa Guatemala 2" class="gallery-img w-full h-40 object-cover" onclick="openLightbox(this.src)">
-          </div>
-          <div class="p-4">
-            <h4 class="text-xl font-semibold mb-2">Mapa de Guatemala</h4>
-            <p class="text-sm text-gray-500 mb-2">Arte 3D impreso con PLA ecológico.</p>
-            <label for="size1" class="block text-sm font-medium">Tamaño y precio:</label>
-            <select id="size1" class="w-full border rounded p-2 mt-1 mb-3" onchange="updatePrice(this, 'price1')">
-              <option value="Q2000">30x20 cm</option>
-              <option value="Q800">50x35 cm</option>
-            </select>
-            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q2000</span></p>
-            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
+            <p class="text-indigo-600 font-bold text-lg">Precio: <span id="price1">Q</span></p>
+            <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Templo%20de%20Tikal%20en%20tama%C3%B1o%2010x15%20cm%20por%20Q80" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
           </div>
         </div>
 
@@ -180,7 +163,7 @@
             <a href="https://wa.me/50244726096?text=Hola%2C%20quiero%20ordenar%20el%20Mapa%20de%20Guatemala%20en%20tama%C3%B1o%2030x20%20cm%20por%20Q2000" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Ordenar por WhatsApp</a>
           </div>
         </div>
-        <!-- Puedes duplicar el div anterior para agregar más productos con diferentes IDs y datos -->
+      
 
         <!-- producto 4-->
         <div class="bg-white rounded-xl shadow-md overflow-hidden">
@@ -208,7 +191,7 @@
   
 
   
-  <!-- Lightbox Viewer -->
+ 
   <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img" src="" alt="Imagen ampliada">
   </div>
